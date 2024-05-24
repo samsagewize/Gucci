@@ -24,6 +24,7 @@
         .content-container {
             text-align: center;
             position: relative;
+            padding-bottom: 50px; /* Adjust to accommodate the X link button */
         }
 
         h1 {
@@ -53,10 +54,10 @@
 
         .carousel {
             white-space: nowrap;
-            animation: scrollLeft 20s linear infinite;
+            animation: scrollLeft 30s linear infinite;
         }
 
-        .carousel img, .carousel video {
+        .carousel img {
             display: inline-block;
             max-width: 100%;
             height: auto;
@@ -64,14 +65,17 @@
         }
 
         @keyframes scrollLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-200%); }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
 
         .button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: inline-block;
             padding: 12px 24px;
-            margin-top: 20px;
             background-color: #ff7f50;
             color: white;
             border: none;
@@ -100,15 +104,11 @@
                 <img src="Screenshot 2024-05-24 135825.png" alt="Carousel Image 1">
                 <img src="Screenshot 2024-05-24 135838.png" alt="Carousel Image 2">
                 <img src="Untitled design (92).png" alt="Carousel Image 3">
-                <video controls>
-                    <source src="Video (4).MOV" type="video/quicktime">
-                    Your browser does not support the video tag.
-                </video>
             </div>
         </div>
-
-        <!-- Buttons with clickable links -->
-        <a href="https://x.com/SamSageWize" target="_blank" class="button">X</a>
     </div>
+
+    <!-- X link button -->
+    <a href="https://x.com/SamSageWize" target="_blank" class="button">X</a>
 </body>
 </html>
