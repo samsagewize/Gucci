@@ -36,17 +36,23 @@
             }
         }
 
-        h1 {
-            font-family: 'Georgia', serif;
-            font-size: 40px;
+            h1 {
+            font-family: 'Diamond', sans-serif; /* Use the diamond font */
+            font-size: 60px;
             color: #333333;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
+            transform-style: preserve-3d; /* Apply 3D transformation */
+            animation: rotateDiamond 5s infinite alternate; /* Apply rotation animation */
         }
 
-        h1:hover {
-            transform: scale(1.1);
+        @keyframes rotateDiamond {
+            from {
+                transform: rotateX(0deg) rotateY(0deg); /* Initial rotation */
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg); /* Final rotation */
+            }
         }
 
         img {
