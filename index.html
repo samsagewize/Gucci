@@ -9,73 +9,83 @@
             margin: 0;
             padding: 0;
             background-image: 
-                url('Screenshot 2024-05-08 180303.png'), /* First background image */
-                url('Screenshot_2024-05-24_121700-removebg-preview.png'); /* Second background image */
-            background-repeat: no-repeat; /* Do not repeat the background images */
-            background-position: center, top right; /* Set the positions of the background images */
-            background-size: cover, auto; /* Set the sizes of the background images */
+                url('Untitled design (92).png'), /* First instance of the image */
+                url('Untitled design (92).png'), /* Second instance of the image */
+                url('Untitled design (92).png'), /* Third instance of the image */
+                url('Untitled design (92).png'); /* Fourth instance of the image */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
             filter: 
                 brightness(0.1) sepia(1) hue-rotate(60deg), /* Adjust filter values for the first image */
                 brightness(0.8) sepia(1) hue-rotate(90deg),  /* Adjust filter values for the second image */
                 brightness(1.2) sepia(0) hue-rotate(90deg), /* Adjust filter values for the third image */
                 brightness(0.1) sepia(1) hue-rotate(45deg);  /* Adjust filter values for the fourth image */
+            overflow: hidden;
         }
 
         .content-container {
             text-align: center;
+            animation: leaveAndComeBack 20s infinite;
             position: relative;
-            padding-bottom: 50px; /* Adjust to accommodate the X link button */
+            z-index: 1;
+            color: white;
+        }
+
+        @keyframes leaveAndComeBack {
+            0%, 100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            10%, 90% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
         }
 
         h1 {
             font-family: 'Diamond', sans-serif; /* Use the diamond font */
             font-size: 60px;
-            color: #fff; /* Solid text color */
-            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000; /* Solid text outline */
+            color: #333333;
             margin-bottom: 20px;
-        }
-
-        h1::after {
-            content: 'Gucci On Solana';
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d; /* Apply 3D transformation */
+            animation: rotateDiamond 5s infinite alternate; /* Apply rotation animation */
             position: absolute;
-            top: 0;
-            left: 0;
-            color: transparent; /* Transparent text color */
-            text-shadow: none; /* No text shadow */
-            z-index: -1; /* Behind the main text */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            margin-top: 50px;
+        @keyframes rotateDiamond {
+            from {
+                transform: rotateX(0deg) rotateY(0deg); /* Initial rotation */
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg); /* Final rotation */
+            }
         }
 
-        .carousel {
-            white-space: nowrap;
-            animation: scrollLeft 30s linear infinite; /* Adjust animation duration */
-        }
-
-        .carousel img {
-            display: inline-block;
-            max-width: 100%;
+        img {
+            width: 80%; 
+            max-width: 400px; 
             height: auto;
-            vertical-align: middle;
+            border-radius: 10px;
+            border: 3px solid #cccccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
-        @keyframes scrollLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .button {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             display: inline-block;
             padding: 12px 24px;
+            margin-top: 20px;
             background-color: #ff7f50;
             color: white;
             border: none;
@@ -90,31 +100,111 @@
             background-color: #ff4500;
             transform: scale(1.1);
         }
+
+        .textbox {
+            font-size: 20px;
+            font-weight: bold;
+            color: #444444;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .textbox:hover {
+            transform: scale(1.05);
+        }
+
+        canvas {
+            display: block;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 3px solid #cccccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gucci-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            white-space: pre;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            opacity: 0.1;
+        }
+
+        /* Carousel */
+        .carousel-container {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            animation: slideLeft 30s linear infinite;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Sound Toggle Button */
+        #sound-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            cursor: pointer;
+            outline: none;
+            z-index: 2;
+        }
+
+        #sound-toggle:hover {
+            background-color: #ff4500;
+        }
     </style>
 </head>
 <body>
+    <!-- Sound Toggle Button -->
+    <button id="sound-toggle">Sound On</button>
+
+    <!-- Audio Element for Happy Tune -->
+    <audio id="happy-tune" loop>
+        <source src="happy_tune.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="content-container">
         <!-- Cursive title -->
         <h1>Gucci On Solana</h1>
 
-        <!-- Carousel container -->
-        <div class="carousel-container">
-            <div class="carousel">
-                <!-- Carousel content -->
-                <img src="Screenshot 2024-05-24 135825.png" alt="Carousel Image 1">
-                <img src="Screenshot 2024-05-24 135838.png" alt="Carousel Image 2">
-                <img src="Untitled design (92).png" alt="Carousel Image 3">
-                <img src="Screenshot 2024-05-24 140728.png" alt="Carousel Image 4">
-                <!-- Duplicated images for loop -->
-                <img src="Screenshot 2024-05-24 135825.png" alt="Carousel Image 1">
-                <img src="Screenshot 2024-05-24 135838.png" alt="Carousel Image 2">
-                <img src="Untitled design (92).png" alt="Carousel Image 3">
-                <img src="Screenshot 2024-05-24 140728.png" alt="Carousel Image 4">
-            </div>
-        </div>
-    </div>
+        <!-- Using the provided image path -->
+        <img src="Untitled design (92).png" alt="Gucci">
 
-    <!-- X link button -->
-    <a href="https://x.com/SamSageWize" target="_blank" class="button">X</a>
-</body>
-</html>
+        <!-- Buttons with clickable links -->
+        <a href="https://x.com
