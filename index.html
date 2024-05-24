@@ -36,24 +36,23 @@
         transform: translateY(0);
     }
 }
-        h1 {
-            font-family: 'Diamond', sans-serif; /* Use the diamond font */
-            font-size: 60px;
-            color: #333333;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            transform-style: preserve-3d; /* Apply 3D transformation */
-            animation: rotateDiamond 5s infinite alternate; /* Apply rotation animation */
-        }
+       h1 {
+    font-family: 'Diamond', sans-serif; /* Use the diamond font */
+    font-size: 60px;
+    color: #fff; /* Solid text color */
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000; /* Solid text outline */
+    margin-bottom: 20px;
+}
 
-        @keyframes rotateDiamond {
-            from {
-                transform: rotateX(0deg) rotateY(0deg); /* Initial rotation */
-            }
-            to {
-                transform: rotateX(360deg) rotateY(360deg); /* Final rotation */
-            }
-        }
+h1::after {
+    content: 'Gucci On Solana';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent; /* Transparent text color */
+    text-shadow: none; /* No text shadow */
+    z-index: -1; /* Behind the main text */
+}
 
         img {
             width: 80%; 
