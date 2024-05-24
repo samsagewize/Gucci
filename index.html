@@ -56,7 +56,7 @@
             animation: scrollLeft 20s linear infinite;
         }
 
-        .carousel img {
+        .carousel img, .carousel video {
             display: inline-block;
             max-width: 100%;
             height: auto;
@@ -65,7 +65,26 @@
 
         @keyframes scrollLeft {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            100% { transform: translateX(-200%); }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -77,9 +96,14 @@
         <!-- Carousel container -->
         <div class="carousel-container">
             <div class="carousel">
-                <!-- Carousel images -->
+                <!-- Carousel content -->
                 <img src="Screenshot 2024-05-24 135825.png" alt="Carousel Image 1">
                 <img src="Screenshot 2024-05-24 135838.png" alt="Carousel Image 2">
+                <img src="Untitled design (92).png" alt="Carousel Image 3">
+                <video controls>
+                    <source src="Video (4).MOV" type="video/quicktime">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
 
