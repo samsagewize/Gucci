@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gucci</title>
-   <style>
-       body {
+    <style>
+        body {
             margin: 0;
             padding: 0;
             background-image: 
@@ -20,9 +20,14 @@
                 brightness(0.8) sepia(1) hue-rotate(90deg),  /* Adjust filter values for the second image */
                 brightness(1.2) sepia(0) hue-rotate(90deg), /* Adjust filter values for the third image */
                 brightness(0.1) sepia(1) hue-rotate(45deg);  /* Adjust filter values for the fourth image */
-     .content-container {
+        }
+
+        .content-container {
             text-align: center;
             animation: leaveAndComeBack 20s infinite;
+            position: relative; /* Add position relative to contain absolutely positioned particles */
+            z-index: 1; /* Ensure content appears above particles */
+            padding-top: 20vh; /* Adjust to center content vertically */
         }
 
         @keyframes leaveAndComeBack {
@@ -36,7 +41,7 @@
             }
         }
 
-            h1 {
+        h1 {
             font-family: 'Diamond', sans-serif; /* Use the diamond font */
             font-size: 60px;
             color: #333333;
@@ -163,22 +168,9 @@
         <!-- Buttons with clickable links -->
         <a href="https://x.com/SamSageWize" target="_blank" class="button">X</a>
     </div>
-</body>
 
-
-
-
-   <script>
-    // JavaScript to create particle elements dynamically
-    document.addEventListener("DOMContentLoaded", function() {
-        for (let i = 0; i < 50; i++) {
-            let particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.top = `${Math.random() * 100}vh`;
-            particle.style.left = `${Math.random() * 100}vw`;
-            particle.style.animationDelay = `${Math.random() * 10}s`;
-            particle.style.transform = `translateX(${Math.random() * 50 - 25}vw)`;
-            document.body.appendChild(particle);
-        }
-    });
-</script>
+    <script>
+        // JavaScript to create particle elements dynamically
+        document.addEventListener("DOMContentLoaded", function() {
+            for (let i = 0; i < 50; i++) {
+                let particle = document
