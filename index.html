@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gucci</title>
     <style>
-      body {
+     body {
     margin: 0;
     padding: 0;
     background-image: 
@@ -21,26 +21,21 @@
         brightness(0.1) sepia(1) hue-rotate(45deg);  /* Adjust filter values for the fourth image */
 }
 
+.content-container {
+    text-align: center;
+    animation: leaveAndComeBack 20s infinite;
+}
 
-        .content-container {
-            text-align: center;
-            animation: leaveAndComeBack 20s infinite;
-            position: relative; /* Add position relative to contain absolutely positioned particles */
-            z-index: 1; /* Ensure content appears above particles */
-            padding-top: 20vh; /* Adjust to center content vertically */
-        }
-
-        @keyframes leaveAndComeBack {
-            0%, 100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            10%, 90% {
-                opacity: 0;
-                transform: translateY(-100px);
-            }
-        }
-
+@keyframes leaveAndComeBack {
+    0%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
         h1 {
             font-family: 'Diamond', sans-serif; /* Use the diamond font */
             font-size: 60px;
