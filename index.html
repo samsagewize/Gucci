@@ -15,11 +15,22 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        background-image: url('data:image/png;base64,iVBORw0KGg...');
-        background-repeat: repeat;
-        background-size: cover;
         overflow: hidden;
         position: relative;
+        background: repeating-linear-gradient(
+            45deg,
+            #f0f0f0 0,
+            #f0f0f0 10px,
+            #ffffff 10px,
+            #ffffff 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            #f0f0f0 0,
+            #f0f0f0 10px,
+            #ffffff 10px,
+            #ffffff 20px
+        );
     }
 
     h1 {
@@ -94,29 +105,20 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Particle animation */
-    .particle {
+    .gucci-bg {
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.8);
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        animation: drift 10s infinite;
-        opacity: 0.8;
-    }
-
-    @keyframes drift {
-        0% {
-            transform: translateY(0) translateX(0);
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        100% {
-            transform: translateY(-100vh) translateX(20vw);
-            opacity: 0;
-        }
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #e0e0e0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 12px;
+        white-space: pre;
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0.1;
     }
 
     /* Responsive design for mobile devices */
@@ -140,7 +142,6 @@
         }
     }
 </style>
-
 </head>
 <body>
 
