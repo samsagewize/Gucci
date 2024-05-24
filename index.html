@@ -54,7 +54,7 @@
 
         .carousel {
             white-space: nowrap;
-            animation: scrollLeft 60s linear infinite; /* Adjust animation duration */
+            animation: scrollLeft 30s linear infinite; /* Adjust animation duration */
         }
 
         .carousel img {
@@ -65,8 +65,8 @@
         }
 
         @keyframes scrollLeft {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .button {
@@ -104,7 +104,12 @@
                 <img src="Screenshot 2024-05-24 135825.png" alt="Carousel Image 1">
                 <img src="Screenshot 2024-05-24 135838.png" alt="Carousel Image 2">
                 <img src="Untitled design (92).png" alt="Carousel Image 3">
-                <img src="Screenshot 2024-05-24 140728.png" alt="Carousel Image 4"> <!-- Added image -->
+                <img src="Screenshot 2024-05-24 140728.png" alt="Carousel Image 4">
+                <!-- Duplicated images for loop -->
+                <img src="Screenshot 2024-05-24 135825.png" alt="Carousel Image 1">
+                <img src="Screenshot 2024-05-24 135838.png" alt="Carousel Image 2">
+                <img src="Untitled design (92).png" alt="Carousel Image 3">
+                <img src="Screenshot 2024-05-24 140728.png" alt="Carousel Image 4">
             </div>
         </div>
     </div>
