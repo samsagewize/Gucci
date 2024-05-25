@@ -54,7 +54,7 @@
 
         .carousel {
             white-space: nowrap;
-            animation: scrollLeft 10s linear infinite; /* Adjust animation duration for faster speed */
+            animation: scrollLeft 20s linear infinite; /* Adjust animation duration for faster speed */
         }
 
         .carousel img {
@@ -66,12 +66,12 @@
 
         @keyframes scrollLeft {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            100% { transform: translateX(-50%); }
         }
 
         @media (max-width: 767px) { /* Mobile view */
             .carousel {
-                animation: scrollLeft 5s linear infinite; /* Faster animation for mobile devices */
+                animation: scrollLeft 10s linear infinite; /* Faster animation for mobile devices */
             }
         }
 
@@ -148,16 +148,15 @@
                 <img src="Screenshot 2024-05-24 203935.png" alt="Carousel Image 5">
                 <img src="Screenshot 2024-05-24 203947.png" alt="Carousel Image 6">
                 <img src="Screenshot 2024-05-24 204229.png" alt="Carousel Image 7">
+                <!-- Duplicated images for loop -->
+                <img src="Screenshot 2024-05-24 135825.png" alt="Carousel Image 1">
+                <img src="Screenshot 2024-05-24 135838.png" alt="Carousel Image 2">
+                <img src="Untitled design (92).png" alt="Carousel Image 3">
+                <img src="Screenshot 2024-05-24 203935.png" alt="Carousel Image 5">
+                <img src="Screenshot 2024-05-24 203947.png" alt="Carousel Image 6">
+                <img src="Screenshot 2024-05-24 204229.png" alt="Carousel Image 7">
             </div>
         </div>
-
-        <!-- Popup container -->
-        <div class="popup" id="popup">
-            <button class="popup-close" id="popup-close">&times;</button>
-            <img src="Screenshot 2024-05-24 203046.png" alt="Popup Image">
-        </div>
-    </div>
-
     <!-- Popup button -->
     <button class="button" id="popup-button">Show Image</button>
 
