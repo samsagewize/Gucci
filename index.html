@@ -69,6 +69,12 @@
             100% { transform: translateX(-50%); }
         }
 
+        @media (max-width: 767px) { /* Mobile view */
+            .carousel {
+                animation: scrollLeft 5s linear infinite; /* Faster animation for mobile devices */
+            }
+        }
+
         .button {
             position: fixed;
             bottom: 20px;
@@ -91,17 +97,39 @@
             transform: scale(1.1);
         }
 
-        #meme-generator-container {
-            width: 100%;
-            height: 400px;
-            margin-top: 50px;
-            position: relative;
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            z-index: 1000;
+            background-color: white;
+            border: 2px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        #meme-generator {
+        .popup img {
             width: 100%;
-            height: 100%;
+            height: auto;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4500;
+            color: white;
             border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -126,21 +154,32 @@
             </div>
         </div>
 
+        <!-- Popup container -->
+        <div class="popup" id="popup">
+            <button class="popup-close" id="popup-close">&times;</button>
+            <img src="Screenshot 2024-05-24 203046.png" alt="Popup Image">
+        </div>
+    </div>
+
+    <!-- Popup button -->
+    <button class="button" id="popup-button">Show Image</button>
+
     <!-- X link button -->
-    <a href="https://x.com/SamSageWize" target="_blank" class="button">X</a>
+    <a href="https://x.com/SamSageWize" target="_blank" class="button" style="bottom: 60px;">X</a>
 
     <script>
-        window.addEventListener('message', function(event) {
-            if (event.origin !== "https://michimaker.vercel.app") {
-                console.log('Message from untrusted origin:', event.origin);
-                return;
-            }
+        document.getElementById('popup-button').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'block';
+        });
 
-            if (event.data.frameId === 'meme-generator') {
-                var iframe = document.getElementById('meme-generator');
-                if (iframe) {
-                    iframe.style.height = event.data.frameHeight + 'px';
-                }
+        document.getElementById('popup-close').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            var popup = document.getElementById('popup');
+            if (event.target == popup) {
+                popup.style.display = 'none';
             }
         });
     </script>
