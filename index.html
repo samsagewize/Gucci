@@ -64,16 +64,16 @@
             vertical-align: middle;
         }
 
-@keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100% * 10)); } /* Assuming there are 10 images, adjust the number accordingly */
-}
+     @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200%); }
+        }
 
-@media (max-width: 767px) { /* Mobile view */
-    .carousel {
-        animation: scrollLeft 25s linear infinite; /* Faster animation for mobile devices */
-    }
-} 
+        @media (max-width: 767px) { /* Mobile view */
+            .carousel {
+                animation: scrollLeft 5s linear infinite; /* Faster animation for mobile devices */
+            }
+        }
 
         .button {
             position: fixed;
@@ -168,7 +168,7 @@
     <button class="button" id="popup-button">Surprise</button>
 
     <!-- X link button -->
-    <a href="https://x.com/GucciOnSolana" target="_blank" class="button" style="bottom: 60px;">X</a>
+    <a href="https://x.com/SamSageWize" target="_blank" class="button" style="bottom: 60px;">X</a>
 
     <script>
         document.getElementById('popup-button').addEventListener('click', function() {
