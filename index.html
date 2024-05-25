@@ -64,16 +64,16 @@
             vertical-align: middle;
         }
 
-     @keyframes scrollLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-200%); }
-        }
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% * 10)); } /* Assuming there are 10 images, adjust the number accordingly */
+}
 
-        @media (max-width: 767px) { /* Mobile view */
-            .carousel {
-                animation: scrollLeft 5s linear infinite; /* Faster animation for mobile devices */
-            }
-        }
+@media (max-width: 767px) { /* Mobile view */
+    .carousel {
+        animation: scrollLeft 7s linear infinite; /* Faster animation for mobile devices */
+    }
+} 
 
         .button {
             position: fixed;
