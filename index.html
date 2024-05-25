@@ -24,7 +24,7 @@
         .content-container {
             text-align: center;
             position: relative;
-            padding-bottom: 100px; /* Adjust to accommodate the X link button */
+            padding-bottom: 150px; /* Adjust to accommodate the X link button */
         }
 
         h1 {
@@ -64,7 +64,7 @@
             vertical-align: middle;
         }
 
-     @keyframes scrollLeft {
+        @keyframes scrollLeft {
             0% { transform: translateX(0); }
             100% { transform: translateX(-200%); }
         }
@@ -77,9 +77,6 @@
 
         .button {
             position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             display: inline-block;
             padding: 12px 24px;
             background-color: #ff7f50;
@@ -152,8 +149,7 @@
                 <img src="Screenshot 2024-05-24 203935.png" alt="Carousel Image 5">
                 <img src="Screenshot 2024-05-24 203947.png" alt="Carousel Image 6">
                 <img src="Screenshot 2024-05-24 204229.png" alt="Carousel Image 7">
-                 <img src="Screenshot 2024-05-24 204250.png" alt="Carousel Image 8">
-            
+                <img src="Screenshot 2024-05-24 204250.png" alt="Carousel Image 8">
             </div>
         </div>
 
@@ -164,14 +160,14 @@
         </div>
     </div>
 
-<!-- Popup button -->
-<button class="button" id="popup-button" style="bottom: 60px;">Surprise</button>
+    <!-- Popup button -->
+    <button class="button" id="popup-button" style="bottom: 120px;">Surprise</button>
 
-<!-- X link button -->
-<a href="https://x.com/GucciOnSolana" target="_blank" class="button" style="bottom: 20px;">X</a>
+    <!-- X link button -->
+    <a href="https://x.com/GucciOnSolana" target="_blank" class="button" style="bottom: 60px;">X</a>
 
-<!-- Second button (Telegram) -->
-<a href="https://t.me/+XUMHEkIOnXhhMjdh" target="_blank" class="button" style="bottom: 80px;">T.me</a>
+    <!-- Second button (Telegram) -->
+    <a href="https://t.me/+XUMHEkIOnXhhMjdh" target="_blank" class="button" style="bottom: 20px;">T.me</a>
 
     <script>
         document.getElementById('popup-button').addEventListener('click', function() {
