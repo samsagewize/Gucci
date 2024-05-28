@@ -11,20 +11,17 @@
             background-image: 
                 url('Screenshot 2024-05-08 180303.png'), /* First background image */
                 url('Screenshot_2024-05-24_121700-removebg-preview.png'); /* Second background image */
-            background-repeat: no-repeat; /* Do not repeat the background images */
+            background-repeat: no-repeat, no-repeat; /* Do not repeat the background images */
             background-position: center, top right; /* Set the positions of the background images */
             background-size: cover, auto; /* Set the sizes of the background images */
-            filter: 
-                brightness(0.1) sepia(1) hue-rotate(60deg), /* Adjust filter values for the first image */
-                brightness(0.8) sepia(1) hue-rotate(90deg),  /* Adjust filter values for the second image */
-                brightness(1.2) sepia(0) hue-rotate(90deg), /* Adjust filter values for the third image */
-                brightness(0.1) sepia(1) hue-rotate(45deg);  /* Adjust filter values for the fourth image */
+            height: 100vh; /* Ensure the background covers the full height */
+            width: 100vw; /* Ensure the background covers the full width */
         }
 
         .content-container {
             text-align: center;
             position: relative;
-            padding-bottom: 150px; /* Adjust to accommodate the X link button */
+            padding-bottom: 150px; /* Adjust to accommodate the buttons */
         }
 
         h1 {
@@ -76,7 +73,6 @@
         }
 
         .button {
-            position: fixed;
             display: inline-block;
             padding: 12px 24px;
             background-color: #ff7f50;
@@ -87,6 +83,7 @@
             text-decoration: none;
             font-size: 16px;
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            margin: 10px; /* Add margin for spacing between buttons */
         }
 
         .button:hover {
@@ -128,6 +125,14 @@
             text-align: center;
             cursor: pointer;
         }
+
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -160,17 +165,20 @@
         </div>
     </div>
 
-    <!-- Popup button -->
-    <button class="button" id="popup-button" style="bottom: 120px;">Surprise</button>
+    <!-- Button container -->
+    <div class="button-container">
+        <!-- Popup button -->
+        <button class="button" id="popup-button">Surprise</button>
 
-    <!-- X link button -->
-    <a href="https://x.com/GucciOnSolana" target="_blank" class="button" style="bottom: 60px;">X</a>
+        <!-- X link button -->
+        <a href="https://x.com/GucciOnSolana" target="_blank" class="button">X</a>
 
-    <!-- Second button (Telegram) -->
-    <a href="https://t.me/+XUMHEkIOnXhhMjdh" target="_blank" class="button" style="bottom: 20px;">T.me</a>
+        <!-- Second button (Telegram) -->
+        <a href="https://t.me/+XUMHEkIOnXhhMjdh" target="_blank" class="button">T.me</a>
 
-    <!-- Pump Fun button -->
-    <a href="https://pump.fun/weArMCzqbGAcFTkd2mnTLgsbpDsoA2id5d26tATnkHW" target="_blank" class="button" style="bottom: -20px;">Pump Fun</a>
+        <!-- Pump Fun button -->
+        <a href="https://pump.fun/weArMCzqbGAcFTkd2mnTLgsbpDsoA2id5d26tATnkHW" target="_blank" class="button">Pump Fun</a>
+    </div>
 
     <script>
         document.getElementById('popup-button').addEventListener('click', function() {
